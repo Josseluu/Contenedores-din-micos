@@ -13,7 +13,7 @@ int main() {
         std::valarray<double> multiplicacion = array1 * array2;
         std::valarray<double> division = array1 / array2;
 
-        // Mostrar resultados
+
         std::cout << "Array 1: ";
         for (double val: array1) {
             std::cout << val << " ";
