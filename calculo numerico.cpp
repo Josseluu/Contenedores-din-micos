@@ -7,7 +7,7 @@ int main() {
         std::valarray<double> array1 = {1.0, 2.0, 3.0, 4.0};
         std::valarray<double> array2 = {5.0, 6.0, 7.0, 8.0};
 
-        // Realizar operaciones matemáticas
+
         std::valarray<double> suma = array1 + array2;
         std::valarray<double> resta = array1 - array2;
         std::valarray<double> multiplicacion = array1 * array2;
