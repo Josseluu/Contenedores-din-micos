@@ -13,11 +13,15 @@ void lectura() {
         cout << "No se pudo abrir el archivo";
         exit(1);
     }
+
+    while (!archivo.eof()) {
+        getline(archivo, texto);
+        cout << texto << endl;
+    }
+
+    archivo.close();  // Es importante cerrar el archivo después de su uso
 }
-while (!archivo.eof()) {
-    getline(archivo, texto);
-    cout << texto << endl;
-}
+
 int main() {
     lectura();
     system("pause");
