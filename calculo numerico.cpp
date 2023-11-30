@@ -1,54 +1,23 @@
 #include <iostream>
 #include <valarray>
+#include <numeric>
 
 int main() {
-    int main() {
+    double valores_data[] = {1, 2, 3, 4, 5};
+    std::valarray<double> valores(valores_data, 5);
 
-        std::valarray<double> array1 = {1.0, 2.0, 3.0, 4.0};
-        std::valarray<double> array2 = {5.0, 6.0, 7.0, 8.0};
+    double suma = std::accumulate(std::begin(valores), std::end(valores), 0.0);
 
+    std::cout << "Suma: " << suma << std::endl;
+    std::cout << "Media: " << suma / valores.size() << std::endl;
 
-        std::valarray<double> suma = array1 + array2;
-        std::valarray<double> resta = array1 - array2;
-        std::valarray<double> multiplicacion = array1 * array2;
-        std::valarray<double> division = array1 / array2;
+    valores += 5.0;
 
-
-        std::cout << "Array 1: ";
-        for (double val: array1) {
-            std::cout << val << " ";
-        }
-        std::cout << std::endl;
-
-        std::cout << "Array 2: ";
-        for (double val: array2) {
-            std::cout << val << " ";
-        }
-        std::cout << std::endl;
-
-        std::cout << "Suma: ";
-        for (double val: suma) {
-            std::cout << val << " ";
-        }
-        std::cout << std::endl;
-
-        std::cout << "Resta: ";
-        for (double val: resta) {
-            std::cout << val << " ";
-        }
-        std::cout << std::endl;
-
-        std::cout << "Multiplicación: ";
-        for (double val: multiplicacion) {
-            std::cout << val << " ";
-        }
-        std::cout << std::endl;
-
-        std::cout << "División: ";
-        for (double val: division) {
-            std::cout << val << " ";
-        }
-        std::cout << std::endl;
+    std::cout << "Valores + 5.0: ";
+    for (double valor : valores) {
+        std::cout << valor << " ";
     }
+    std::cout << std::endl;
+
     return 0;
 }

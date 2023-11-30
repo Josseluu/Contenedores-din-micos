@@ -1,16 +1,25 @@
 #include <iostream>
-#include <boost/lexical_cast.hpp>
+#include <fstream>
+#include <cstdlib>
 
-class bad_lexical_cast;
+using namespace std;
 
-int main() {
-    try {
-        std::string str_number = "123";
-        int number = boost::lexical_cast<int>(str_number);
-        std::cout << "Número convertido: " << number << std::endl;
-    } catch (const boost::bad_lexical_cast& e) {
-        std::cerr << "Error al convertir la cadena: " << e.what() << std::endl;
+void lectura() {
+    ifstream archivo;
+    string texto;
+    archivo.open("fisica.txt", ios::in);
+
+    if (archivo.fail()) {
+        cout << "No se pudo abrir el archivo";
+        exit(1);
     }
-
+}
+while (!archivo.eof()) {
+    getline(archivo, texto);
+    cout << texto << endl;
+}
+int main() {
+    lectura();
+    system("pause");
     return 0;
 }
