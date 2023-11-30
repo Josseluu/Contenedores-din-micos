@@ -11,7 +11,7 @@ int main() {
     miVector.push_back(30);
     miVector.push_back(40);
 
-    std::cout << "Elementos del vector: ";
+    std::cout << "Los elementos y los interadores del vector son: ";
     for (std::vector<int>::iterator it = miVector.begin(); it != miVector.end(); ++it) {
         std::cout << *it << " ";
     }
