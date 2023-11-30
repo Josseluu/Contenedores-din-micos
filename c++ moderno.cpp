@@ -1,32 +1,35 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <memory>
+
+using namespace std;
 
 int main() {
+    vector<int> numeros;
+    numeros.push_back(1);
+    numeros.push_back(2);
+    numeros.push_back(3);
+    numeros.push_back(4);
+    numeros.push_back(5);
 
-    int main() {
+    cout << "Números originales:" << endl;
+    for (auto num : numeros) {
+        cout << num << " ";
+    }
+    cout << endl;
 
-        std::function<int(int)> cuadrado;
-        cuadrado = [](int x) { return x * x; };
+    vector<int> numerosCuadrados;
+    numerosCuadrados.reserve(numeros.size());
 
-        auto numero = 5;
-
-        std::vector<int> numeros = {2, 33, 66, 12, 30};
-
-        std::cout << "Cuadrados de los números en el vector:" << std::endl;
-        std::for_each(numeros.begin(), numeros.end(), [&](int n) {
-            std::cout << cuadrado(n) << " ";
-        });
-        std::cout << std::endl;
-
-        return 0;
+    for (auto num : numeros) {
+        numerosCuadrados.push_back(num * num);
     }
 
-    std::unique_ptr<int> punteroInteligente = std::unique_ptr<int>(new int(10));
-
-    std::cout << "Valor almacenado en el puntero inteligente: " << *punteroInteligente << std::endl;
+    cout << "Cuadrados de los números: " << endl;
+    for (auto num : numerosCuadrados) {
+        cout << num << " ";
+    }
+    cout << endl;
 
     return 0;
 }
-
